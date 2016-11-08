@@ -7,7 +7,7 @@ playing this game with your friends accross the web.
 
 # Architecture
 
-The architecture will consist of a Node web server talking to a Phoenix API running the game engine. 
+The architecture will consist of a Node web server talking to a Phoenix API running the game engine. At this point in the project there are no hard decisions made, so if you have a reason to adopt a different technology. Create a ticket with the pros and cons that can be discussed. 
 
 ### No DB?
 I'm not sure about which DB to use yet. I'm thinking an event store database. Concurrency is a key challenge to address with any multiplayer game. Event stores are concrrent friendly databases. However transactons are also key in a game engine and are not easily adapted to an event store. 
