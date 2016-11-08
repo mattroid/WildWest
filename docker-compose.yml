@@ -1,0 +1,22 @@
+version: '2'
+services:
+  web:
+    build: ./website
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./website/app:/code
+    depends_on:
+      - rabbit
+  rabbit:
+    image: rabbitmq
+  engine:
+    build: ./gameapi
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./gameapi:/code
+    depends_on: 
+      - rabbit
+
+
