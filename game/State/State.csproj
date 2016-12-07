@@ -63,9 +63,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Consumer.cs" />
     <Compile Include="IConnectToRabbitMQ.cs" />
+    <Compile Include="Actors\Sentinal.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Actors\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

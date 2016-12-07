@@ -45,7 +45,7 @@ namespace State
 					Model.ExchangeDeclare(ExchangeName, ExchangeTypeName, durable);
 				return true;
 			}
-			catch (BrokerUnreachableException e)
+			catch (BrokerUnreachableException)
 			{
 				return false;
 			}
