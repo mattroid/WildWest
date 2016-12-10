@@ -8,20 +8,11 @@ using Newtonsoft.Json;
 using RabbitMQ.Client.MessagePatterns;
 using RabbitMQ.Client.Exceptions;
 using State.Actors;
+using State.QueueMessages;
 
 namespace State
 {
-	// Create an (immutable) message type that your actor will respond to
-	public class PlayerJoined
-	{
-		public PlayerJoined(string who)
-		{
-			Who = who;
-		}
-		public string Who { get; private set; }
-	}
-	// Create the actor class
-	
+
 	class MainClass
 	{
 		private static IActorRef sentinal;
@@ -36,12 +27,11 @@ namespace State
 			// reference to the actual actor instance
 			// but rather a client or proxy to it.
 			sentinal = system.ActorOf<Sentinal>("message-watcher");
+
 			SetupRabbit(sentinal);
 
-			// Send a message to the actor
-			//sentinal.Tell(new PlayerJoined("Player 1"));
+			//SendMessage like "{MessageType: 'PlayerJoined', Who: 'Player 2'}");
 
-			//SendMessage("{MessageType: 'PlayerJoined', Who: 'Player 2'}");
 			// This prevents the app from exiting
 			// before the async work is done
 			Console.ReadLine();
@@ -61,12 +51,19 @@ namespace State
 			//Register for message event
 			//consumer.onMessageReceived += handleMessage;
 			consumer.onMessageReceived += (message) => {
-				var msg = JsonConvert.DeserializeObject<StateMessage>(System.Text.Encoding.UTF8.GetString(message));
+				var msgString = System.Text.Encoding.UTF8.GetString(message);
+				var msg = JsonConvert.DeserializeObject<StateMessage>(msgString);
 				switch (msg.MessageType)
 				{
 					case "PlayerJoined":
-						listeningActor.Tell(new PlayerJoined(msg.Who));
+						dynamic joinMsg = JsonConvert.DeserializeObject(msgString);
+						listeningActor.Tell(new PlayerJoined(joinMsg.Who));
 						break;
+					case "PlayerNameChanged":
+						break;
+					case "GameStarted":
+						break;
+
 				}
 			};
 
@@ -78,9 +75,5 @@ namespace State
 	public class StateMessage
 	{
 		public string MessageType { get; set; }
-		public string Who { get; set; }
 	}
-	
-	
-
 }

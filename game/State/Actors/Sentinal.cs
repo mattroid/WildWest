@@ -7,6 +7,7 @@ using RabbitMQ.Client.Events;
 using Newtonsoft.Json;
 using RabbitMQ.Client.MessagePatterns;
 using RabbitMQ.Client.Exceptions;
+using State.QueueMessages;
 
 namespace State.Actors
 {

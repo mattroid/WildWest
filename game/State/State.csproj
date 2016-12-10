@@ -57,6 +57,7 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.9.0.2-beta1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
@@ -64,12 +65,14 @@
     <Compile Include="Consumer.cs" />
     <Compile Include="IConnectToRabbitMQ.cs" />
     <Compile Include="Actors\Sentinal.cs" />
+    <Compile Include="QueueMessages\PlayerJoined.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Actors\" />
+    <Folder Include="QueueMessages\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
