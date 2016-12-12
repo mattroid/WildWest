@@ -66,6 +66,9 @@
     <Compile Include="IConnectToRabbitMQ.cs" />
     <Compile Include="Actors\Sentinal.cs" />
     <Compile Include="QueueMessages\PlayerJoined.cs" />
+    <Compile Include="Actors\Publisher.cs" />
+    <Compile Include="Actors\Player.cs" />
+    <Compile Include="Actors\Card.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -73,6 +76,12 @@
   <ItemGroup>
     <Folder Include="Actors\" />
     <Folder Include="QueueMessages\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusMessages\GameStateMessage.csproj">
+      <Project>{D521CBF8-540C-4C80-8BEE-E73F0FA50049}</Project>
+      <Name>GameStateMessage</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

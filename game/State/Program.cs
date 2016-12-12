@@ -9,6 +9,7 @@ using RabbitMQ.Client.MessagePatterns;
 using RabbitMQ.Client.Exceptions;
 using State.Actors;
 using State.QueueMessages;
+using GameStateMessages;
 
 namespace State
 {
@@ -56,7 +57,7 @@ namespace State
 				switch (msg.MessageType)
 				{
 					case "PlayerJoined":
-						dynamic joinMsg = JsonConvert.DeserializeObject(msgString);
+						dynamic joinMsg = JsonConvert.DeserializeObject<GameJoined>(msgString);
 						listeningActor.Tell(new PlayerJoined(joinMsg.Who));
 						break;
 					case "PlayerNameChanged":

@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "State", "State\State.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestMessages", "TestMessages\TestMessages.csproj", "{582492BD-B931-4155-84E7-9B861849EBA2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameStateMessage", "BusMessages\GameStateMessage.csproj", "{D521CBF8-540C-4C80-8BEE-E73F0FA50049}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -19,5 +21,9 @@ Global
 		{582492BD-B931-4155-84E7-9B861849EBA2}.Debug|x86.Build.0 = Debug|x86
 		{582492BD-B931-4155-84E7-9B861849EBA2}.Release|x86.ActiveCfg = Release|x86
 		{582492BD-B931-4155-84E7-9B861849EBA2}.Release|x86.Build.0 = Release|x86
+		{D521CBF8-540C-4C80-8BEE-E73F0FA50049}.Debug|x86.ActiveCfg = Debug|x86
+		{D521CBF8-540C-4C80-8BEE-E73F0FA50049}.Debug|x86.Build.0 = Debug|x86
+		{D521CBF8-540C-4C80-8BEE-E73F0FA50049}.Release|x86.ActiveCfg = Release|x86
+		{D521CBF8-540C-4C80-8BEE-E73F0FA50049}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 EndGlobal
