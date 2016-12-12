@@ -33,7 +33,7 @@ namespace GameStateMessages
 	{
 		public string PlayerId { get; set; }
 	}
-	public class tookCard
+	public class TookCard
 	{
 		public string StackId { get; set; }
 		public string CardId { get; set; }
