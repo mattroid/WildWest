@@ -7,7 +7,7 @@ namespace GameStateMessages
 		//public string GameId
 		public string PlayerName { get; set; }
 	}
-	public class Cards
+	public class Stack
 	{
 		public string StackId { get; set; }
 		public string[] Cards { get; set; }

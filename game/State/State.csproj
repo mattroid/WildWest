@@ -77,11 +77,5 @@
     <Folder Include="Actors\" />
     <Folder Include="QueueMessages\" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BusMessages\GameStateMessage.csproj">
-      <Project>{D521CBF8-540C-4C80-8BEE-E73F0FA50049}</Project>
-      <Name>GameStateMessage</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

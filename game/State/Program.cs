@@ -23,11 +23,12 @@ namespace State
 			// Create a new actor system (a container for your actors)
 			var system = ActorSystem.Create("StateActorSystem");
 
+			var publisher = system.ActorOf<Publisher>("publisher");
 			// Create your actor and get a reference to it.
 			// This will be an "ActorRef", which is not a
 			// reference to the actual actor instance
 			// but rather a client or proxy to it.
-			sentinal = system.ActorOf<Sentinal>("message-watcher");
+			sentinal = system.ActorOf(Props.Create(()=> new Sentinal(publisher)), "message-watcher");
 
 			SetupRabbit(sentinal);
 
