@@ -3,11 +3,16 @@ using Akka.Actor;
 
 namespace State.Actors
 {
-	class Card
+	public class Card : ReceiveActor
 	{
-		internal static Props Props(string v)
+		private string _cardId;
+		public Card(string cardId)
 		{
-			throw new NotImplementedException();
+			_cardId = cardId;
+		}
+		public static Props Props(string cardId)
+		{
+			return Akka.Actor.Props.Create(() => new Card(cardId));
 		}
 	}
 }
