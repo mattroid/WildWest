@@ -24,4 +24,4 @@ RabbitJS gives us a socket interface to talk to the service bus on. This is easy
 ## Akka.NET (C#)
 This is running the opensource .NET framework (mono).
 
-Akka.NET uses an actor framework which is well suited for tracking state in a distrubuted envrionment. Our system doesn't, at this point, need to be distributed, but we can utilize the actor framework in a non distributed manor for now and then implement distribution as a configuration change later.  
+Akka.NET uses an actor framework which is well suited for tracking state in a distrubuted envrionment. Our system doesn't, at this point, need to be distributed, but we can utilize the actor framework in a non distributed manor for now and later implement distribution as a configuration change later.  
