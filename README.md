@@ -20,3 +20,8 @@ SocketIO gives us a socket interface to have a two way connection with clients. 
 
 ### RabbitJS
 RabbitJS gives us a socket interface to talk to the service bus on. This is easy to use and familure to the socket interface that we use to talk to the connected clients.
+
+## Akka.NET (C#)
+This is running the opensource .NET framework (mono).
+
+Akka.NET uses an actor framework which is well suited for tracking state in a distrubuted envrionment. Our system doesn't, at this point, need to be distributed, but we can utalize the actor framework in a non distributed manor for now and then implement distribution as a configuration change later.  
