@@ -54,8 +54,8 @@ namespace State
 			//consumer.onMessageReceived += handleMessage;
 			consumer.onMessageReceived += (message) => {
 				var msgString = System.Text.Encoding.UTF8.GetString(message);
-				var msg = JsonConvert.DeserializeObject<StateMessage>(msgString);
-				switch (msg.MessageType)
+				var msg = JsonConvert.DeserializeObject(msgString);
+				switch ((msg as StateMessage).MessageType)
 				{
 					case "PlayerJoined":
 						dynamic joinMsg = JsonConvert.DeserializeObject<GameJoined>(msgString);
