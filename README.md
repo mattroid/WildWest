@@ -5,6 +5,7 @@ Wild West is a web based implementation of the populate Bang! card game. The
 aim of this project is to provide an friendly and entertaining interface for 
 playing this game with your friends accross the web.
 
+
 # Architecture
 
 The architecture will consist of a Node web server talking to a socket.io backend. The backend will translate messages from the client and relay them to the service bus (RabbitMQ). The business logic will consist of services listening on the bus and providing responses that the socket.io service will relay to the client[s]. 
